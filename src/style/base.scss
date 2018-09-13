@@ -1,6 +1,8 @@
 $color-blue-one: #5496e6;
 $color-blue-two: #518bde;
 
+$color-gray-one: #444;
+
 .grid {    
     display: grid;
     grid-template-rows: repeat(4, minmax(200px, 1fr));
