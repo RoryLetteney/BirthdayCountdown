@@ -4,6 +4,7 @@ import { Button } from "./button";
 import Clock from "./clock";
 import { ChangeDate } from "./changeDate";
 import { LargeText } from "./largeText";
+import moment from 'moment';
 
 export default class App extends Component {
 
@@ -11,9 +12,39 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      active: false
+      active: false,
+      startDate: moment()
     }
     this.renderItems = this.renderItems.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleGenerate = this.handleGenerate.bind(this);
+  }
+
+  handleChange(date) {
+    console.log("APP JS HANDLE CHANGE", date._d);
+    this.setState({ startDate: date });
+  }
+
+  handleGenerate() {
+    this.setState({ active: true })
+
+    var countDownDate = this.state.startDate.toDate().getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance/(1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      const time = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      console.log(time);
+
+      if (distance < 0) {
+        clearInterval(x);
+      }
+    }, 1000);
   }
 
   renderItems() {
@@ -26,8 +57,8 @@ export default class App extends Component {
       ]
     } else {
       return [
-        <Picker/>,
-        Button("Generate Countdown", () => this.setState({ active: true }))
+        <Picker callback={(date) => this.handleChange(date)}/>,
+        Button("Generate Countdown", () => this.handleGenerate())
       ]
     }
   }
@@ -37,11 +68,8 @@ export default class App extends Component {
     return (
       <div className="grid">
         <h2 className="grid__title">Birthday Countdown</h2>
-
         <div className="grid__skew-dark" />
-
-        <div className="grid__skew-light" />
-      
+        <div className="grid__skew-light" />      
         {this.renderItems()}
       </div>
     );
