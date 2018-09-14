@@ -1,0 +1,24 @@
+.change-date {
+    grid-row: 2/3;
+    grid-column: 4/5;
+
+    font-size: 24px;
+    line-height: 19px;
+    text-align: center;
+    font-family: "Roboto Condensed";
+    color: white;
+
+    background: transparent;
+    border: none;
+
+    transform: rotate(-72deg) translate(-75px, -75px);
+
+    &:focus {
+        outline: none;
+    }
+
+    i {
+        padding-right: 10px;
+    }
+
+}
