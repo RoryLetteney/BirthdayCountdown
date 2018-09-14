@@ -38,12 +38,11 @@ export default class App extends Component {
       <div className="grid">
         <h2 className="grid__title">Birthday Countdown</h2>
 
-        <div className="grid__skew-dark-one-box" />
         <div className="grid__skew-dark-two" />
 
         <div className="grid__skew-light-one" />
-        <div className="grid__skew-light-two" />
-        <div className="grid__skew-light-three-box" />
+        {/* <div className="grid__skew-light-two" />
+        <div className="grid__skew-light-three-box" /> */}
       
         {this.renderItems()}
       </div>
