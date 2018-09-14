@@ -1,6 +1,6 @@
 .grid {
 
-    &__skew-light-one {
+    &__skew-light {
         -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
         clip-path: polygon(0 0, 0% 100%, 100% 100%);
         background-color: $color-blue-one;
@@ -8,7 +8,7 @@
         grid-row: 3/5;
     }
     
-    &__skew-dark-two {
+    &__skew-dark {
         z-index: -10;
         background-color: $color-blue-two;
         grid-column: 1/5;
