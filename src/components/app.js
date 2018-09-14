@@ -29,6 +29,7 @@ export default class App extends Component {
 
   handleChange(date) {
     console.log("APP JS HANDLE CHANGE", date._d);
+    clearInterval(this.timer);
     this.setState({ startDate: date });
   }
 
