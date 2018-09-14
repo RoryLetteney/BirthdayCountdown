@@ -2,9 +2,36 @@
     grid-row: 3/4;
     grid-column: 2/11;
     background: $color-gray-one;
-    height: 80%;
+    height: 75%;
+    width: 100%;
     align-self: end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 275px));
     
     clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
     -webkit-clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    font-family: "Roboto Condensed";
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        margin: 24px auto 0;
+    }
+
+    &__title {
+        font-size: 22px;
+        line-height: 25px;
+        color: $color-yellow-one;
+    }
+
+    &__amount {
+        font-size: 90px;
+        font-weight: bold;
+        line-height: 115px;
+        color: white;
+    }
+
 }
