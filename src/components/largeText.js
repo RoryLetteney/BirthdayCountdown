@@ -1,5 +1,5 @@
 import React from "react";
 
 export const LargeText = text => {
-  return <div className="large-text">{text}</div>;
+  return <div key={2} className="large-text">{text}</div>;
 };
