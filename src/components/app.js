@@ -3,6 +3,7 @@ import Picker from "./picker";
 import { Button } from "./button";
 import Clock from "./clock";
 import { ChangeDate } from "./changeDate";
+import { LargeText } from "./largeText";
 
 export default class App extends Component {
 
@@ -19,10 +20,15 @@ export default class App extends Component {
     if(this.state.active) {
       return [
         <Clock/>,
-        ChangeDate('Change Date', () => this.setState({ active: false }))
+        ChangeDate('Change Date', () => this.setState({ active: false })),
+        LargeText('04/03'),
+        <label className="grid__remaining">remaining until your 29th birthday</label>
       ]
     } else {
-      return Button("Generate Countdown", () => this.setState({ active: true }))
+      return [
+        <Picker/>,
+        Button("Generate Countdown", () => this.setState({ active: true }))
+      ]
     }
   }
 
@@ -38,8 +44,7 @@ export default class App extends Component {
         <div className="grid__skew-light-one" />
         <div className="grid__skew-light-two" />
         <div className="grid__skew-light-three-box" />
-
-        <Picker />        
+      
         {this.renderItems()}
       </div>
     );

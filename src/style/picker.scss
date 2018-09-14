@@ -4,13 +4,14 @@
   font-size: 80px;
   padding-bottom: 50px;
   justify-self: center;
+  align-self: end;
 
   input {
     background: clear;
     text-align: center;
     border: none;
     border-bottom: 2px solid #e3b924;
-    font-family: "Roboto Condensed";
+    font-family: $font-main;
     font-weight: bold;
     color: $color-gray-one;
 

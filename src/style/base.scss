@@ -2,25 +2,41 @@ $color-blue-one: #5496e6;
 $color-blue-two: #518bde;
 
 $color-gray-one: #444;
+$color-gray-two: #e6e6e6;
 $color-yellow-one: #f7d754;
 
-.grid {    
-    display: grid;
-    grid-template-rows: repeat(4, minmax(200px, 1fr));
-    grid-template-columns: repeat(11, minmax(150px, 1fr));
+$font-main: "Roboto Condensed";
+$font-secondary: "Montserrat";
 
-    height: 100vh;
-    width: 100vw;
+.grid {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(200px, 1fr));
+  grid-template-columns: repeat(11, minmax(150px, 1fr));
 
-    &__title {
-        color: white;
-        justify-self: center;
-        padding: 40px 0 0 0;
-        line-height: 22px;
-        grid-row: 1/2;
-        grid-column: 1/3;
-        font-size: 18px;
-        font-family: 'Montserrat';
-        font-weight: 300;
-    }
+  height: 100vh;
+  width: 100vw;
+
+  &__title {
+    color: white;
+    justify-self: center;
+    padding: 40px 0 0 0;
+    line-height: 22px;
+    grid-row: 1/2;
+    grid-column: 1/3;
+    font-size: 18px;
+    font-family: $font-secondary;
+    font-weight: 300;
+  }
+
+  &__remaining {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    text-align: center;
+    margin-top: 33px;
+    color: $color-gray-one;
+    font-family: $font-secondary;
+    font-size: 22px;
+    font-weight: 300;
+  }
+
 }
