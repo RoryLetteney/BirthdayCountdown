@@ -8,15 +8,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 export default class Picker extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      startDate: moment()
-    };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(date) {
-    console.log("trying to change date to", date._d);
-    this.setState({ startDate: date });
     this.props.callback(date)
   }
 
@@ -24,7 +19,7 @@ export default class Picker extends Component {
     return (
       <div className="picker">
         <DatePicker
-          selected={this.state.startDate}
+          selected={this.props.startDate}
           onChange={this.handleChange}
         />
       </div>

@@ -13,7 +13,13 @@ export default class App extends Component {
 
     this.state = {
       active: false,
-      startDate: moment()
+      startDate: moment(),
+      timeRemaining: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      }
     }
     this.renderItems = this.renderItems.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -39,7 +45,17 @@ export default class App extends Component {
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       const time = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      console.log(time);
+      
+      this.setState({
+        timeRemaining: {
+          days,
+          hours,
+          minutes,
+          seconds
+        }
+      })
+      
+      console.log(this.state.timeRemaining);
 
       if (distance < 0) {
         clearInterval(x);
@@ -57,7 +73,7 @@ export default class App extends Component {
       ]
     } else {
       return [
-        <Picker callback={(date) => this.handleChange(date)}/>,
+        <Picker startDate={this.state.startDate} callback={(date) => this.handleChange(date)}/>,
         Button("Generate Countdown", () => this.handleGenerate())
       ]
     }
