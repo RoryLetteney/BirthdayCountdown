@@ -1,5 +1,3 @@
-# React with Bootstrap Starter Project
+> This is a birthday countdown application built using React.
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
-
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+> Users enter their birthday and are shown how many days, weeks, hours, and seconds until their big day. On the countdown page users are also able to change the date entered.
